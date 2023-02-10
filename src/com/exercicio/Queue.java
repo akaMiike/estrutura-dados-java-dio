@@ -2,14 +2,14 @@ package com.exercicio;
 
 public class Queue<T>{
 
-    private Node first;
+    private Node last;
 
     public Queue(){
-        first = null;
+        last = null;
     }
 
     private T first(){
-        Node actual = first;
+        Node actual = last;
         while(actual.nextRef != null){
              actual = actual.nextRef;
         }
@@ -19,14 +19,10 @@ public class Queue<T>{
 
     public void enqueue(T content){
         if(isEmpty())
-            first = new Node(content);
-
-        Node actual = this.first;
-        while(actual.nextRef != null){
-            actual = actual.nextRef;
+            last = new Node(content);
+        else{
+            last = new Node(content, last);
         }
-
-        first = new Node(content, actual);
     }
 
     public T dequeue(){
@@ -35,14 +31,15 @@ public class Queue<T>{
         if(isEmpty())
             return null;
 
-        else if(first.nextRef == null){
-            actual = first;
-            first = null;
+        else if(last.nextRef == null){
+            actual = last;
+            last = null;
             return actual.content;
         }
 
         else{
-            actual = first;
+            actual = last;
+
             while(actual.nextRef.nextRef != null){
                  actual = actual.nextRef;
             }
@@ -55,24 +52,23 @@ public class Queue<T>{
     }
 
     public Boolean isEmpty(){
-        return first == null;
+        return last == null;
     }
 
     @Override
     public String toString(){
         String queueString = "--------Fila--------\n";
-        Node noAtual = this.first;
+        Node noAtual = this.last;
 
         if(!isEmpty()){
-            queueString += "{No = " + noAtual.content + "}";
+            queueString += "{No = " + noAtual.content + "} -> ";
 
             while(noAtual.nextRef != null){
                 noAtual = noAtual.nextRef;
-                queueString += "\n";
-                queueString += "{No = " + noAtual.content + "}";
+                queueString += "{No = " + noAtual.content + "} -> ";
             }
         }
-
+        queueString += "Fim da fila";
         queueString += "\n---------------------";
         return queueString;
     }

@@ -21,8 +21,11 @@ public class Main {
         Queue<String> queue = new Queue<>();
         System.out.println(queue);
 
-        queue.enqueue("Nova string 1");
-        queue.enqueue("Nova string 2");
+        queue.enqueue("Primeiro");
+        queue.enqueue("Segundo");
+        queue.enqueue("Terceiro");
+        System.out.println(queue);
+        queue.dequeue();
         System.out.println(queue);
 
     }
