@@ -3,23 +3,33 @@ package com.exercicio;
 public class Stack<T> {
     private No topo;
 
-    public Stack(){}
-
-    public void pop() throws Exception{
-        if(topo == null)
-            throw new Exception("Não foi possível remover o topo pois a pilha está vazia.");
-
-        this.topo = topo.proxNo;
+    public Stack(){
+        this.topo = null;
     }
 
-    public T top() throws Exception{
-        if(topo == null)
-            throw new Exception("Não há elementos na pilha");
+    public Boolean isEmpty(){
+        return topo == null;
+    }
+
+    public T pop(){
+        if(topo == null) {
+            return null;
+        }
+
+        T poppedNo = topo.conteudo;
+        this.topo = topo.proxNo;
+
+        return poppedNo;
+    }
+
+    public T top(){
+        if(isEmpty())
+            return null;
 
         return topo.conteudo;
     }
 
-    public void newNode(T conteudo){
+    public void push(T conteudo){
         if(topo == null){
             topo = new No(conteudo);
         }
@@ -28,17 +38,21 @@ public class Stack<T> {
         }
     }
 
-    public void showStack(){
+    @Override
+    public String toString(){
+        String stackString = "";
         No noAtual = this.topo;
-        System.out.println("Elementos da pilha: ");
-        System.out.println(noAtual.conteudo);
+
+        if(!isEmpty())
+            stackString += "{No = " + noAtual.conteudo + " }";
 
         while(noAtual.proxNo != null){
             noAtual = noAtual.proxNo;
-            System.out.println(noAtual.conteudo);
+            stackString += "\n";
+            stackString += "{No = " + noAtual.conteudo + " }";
         }
 
-        System.out.println("Fim da pilha.");
+        return stackString;
     }
 
     private class No{

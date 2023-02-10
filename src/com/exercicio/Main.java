@@ -2,18 +2,21 @@ package com.exercicio;
 
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
 	    Stack<String> pilha = new Stack<>();
+        String topo = pilha.pop();
 
-        pilha.newNode("Primeiro elemento");
-        pilha.newNode("Segundo elemento");
-        pilha.showStack();
+        System.out.println("Topo vazio: " + topo);
 
-        String topo = pilha.top();
-        System.out.println("Topo: " + topo);
+        pilha.push("Primeiro elemento");
+        pilha.push("Segundo elemento");
+        System.out.println(pilha);
+
+        topo = pilha.top();
+        System.out.println("Topo atual: " + topo);
 
         pilha.pop();
         String novoTopo = pilha.top();
-        System.out.println("Topo apos remover o topo: " + novoTopo);
+        System.out.println("Topo atual apos pop: " + novoTopo);
     }
 }
