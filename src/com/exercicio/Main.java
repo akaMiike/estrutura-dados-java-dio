@@ -17,6 +17,13 @@ public class Main {
 
         pilha.pop();
         String novoTopo = pilha.top();
-        System.out.println("Topo atual apos pop: " + novoTopo);
+
+        Queue<String> queue = new Queue<>();
+        System.out.println(queue);
+
+        queue.enqueue("Nova string 1");
+        queue.enqueue("Nova string 2");
+        System.out.println(queue);
+
     }
 }

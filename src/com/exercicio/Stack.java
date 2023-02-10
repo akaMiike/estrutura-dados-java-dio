@@ -1,7 +1,7 @@
 package com.exercicio;
 
 public class Stack<T> {
-    private No topo;
+    private Node topo;
 
     public Stack(){
         this.topo = null;
@@ -16,8 +16,8 @@ public class Stack<T> {
             return null;
         }
 
-        T poppedNo = topo.conteudo;
-        this.topo = topo.proxNo;
+        T poppedNo = topo.content;
+        this.topo = topo.next;
 
         return poppedNo;
     }
@@ -26,47 +26,49 @@ public class Stack<T> {
         if(isEmpty())
             return null;
 
-        return topo.conteudo;
+        return topo.content;
     }
 
     public void push(T conteudo){
         if(topo == null){
-            topo = new No(conteudo);
+            topo = new Node(conteudo);
         }
         else{
-            topo = new No(conteudo, topo);
+            topo = new Node(conteudo, topo);
         }
     }
 
     @Override
     public String toString(){
-        String stackString = "";
-        No noAtual = this.topo;
+        String stackString = "--------Pilha--------\n";
+        Node noAtual = this.topo;
 
-        if(!isEmpty())
-            stackString += "{No = " + noAtual.conteudo + " }";
+        if(!isEmpty()){
+            stackString += "{No = " + noAtual.content + "}";
 
-        while(noAtual.proxNo != null){
-            noAtual = noAtual.proxNo;
-            stackString += "\n";
-            stackString += "{No = " + noAtual.conteudo + " }";
+            while(noAtual.next != null){
+                noAtual = noAtual.next;
+                stackString += "\n";
+                stackString += "{No = " + noAtual.content + "}";
+            }
         }
 
+        stackString += "\n---------------------";
         return stackString;
     }
 
-    private class No{
-        public T conteudo;
-        public No proxNo;
+    private class Node{
+        public T content;
+        public Node next;
 
-        public No(T conteudo){
-            this.conteudo = conteudo;
-            this.proxNo = null;
+        public Node(T content){
+            this.content = content;
+            this.next = null;
         }
 
-        public No(T conteudo, No proxNo){
-            this.conteudo = conteudo;
-            this.proxNo = proxNo;
+        public Node(T conteudo, Node next){
+            this.content = conteudo;
+            this.next = next;
         }
     }
 
