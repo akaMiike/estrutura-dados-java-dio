@@ -56,7 +56,28 @@ public class Main {
         circularList.add("Element 2",1);
         circularList.add("Element 3",1);
 
-
         System.out.println(circularList);
+
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        binaryTree.add(69);
+        binaryTree.add(15);
+        binaryTree.add(55);
+        binaryTree.add(33);
+        binaryTree.add(66);
+        binaryTree.add(68);
+        binaryTree.add(67);
+        binaryTree.add(56);
+        binaryTree.add(57);
+
+        System.out.println(binaryTree.get(56));
+        System.out.println(binaryTree.get(69));
+        binaryTree.remove(69);
+        binaryTree.remove(55);
+        binaryTree.remove(56);
+        binaryTree.remove(57);
+        binaryTree.remove(15);
+        binaryTree.showOrder(0);
+        binaryTree.showOrder(1);
+        binaryTree.showOrder(2);
     }
 }
