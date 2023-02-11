@@ -1,4 +1,4 @@
-package com.exercicio;
+package com.exercicio.dataStructures;
 
 public class DoublyLinkedList<T> {
 
@@ -8,6 +8,14 @@ public class DoublyLinkedList<T> {
     public DoublyLinkedList(){
         first = null;
         last = null;
+    }
+
+    public T first(){
+        return first.content;
+    }
+
+    public T last(){
+        return last.content;
     }
 
     public int size(){
@@ -36,7 +44,6 @@ public class DoublyLinkedList<T> {
 
     public T remove(int index){
         Node removedNode = getNo(index);
-
         Node previousNode = removedNode.previous;
         Node nextNode = removedNode.next;
 
@@ -58,20 +65,25 @@ public class DoublyLinkedList<T> {
     }
 
     public void add(T content, int index){
+        Node newNode;
+
         if(index == 0){
-            Node newNode = new Node(content, first, null);
-            first = newNode; last = newNode;
+            newNode = new Node(content, first, null);
+            if(isEmpty())
+                last = newNode;
+
+            first = newNode;
         }
         else if(index == size()){
-            Node newNode = new Node(content, null, last);
+            newNode = new Node(content, null, last);
             last.next = newNode;
             last = newNode;
         }
         else{
-            Node actual = getNo(index);
-            Node previous = actual.previous;
+            Node previous = getNo(index-1);
+            Node actual = previous.next;
 
-            Node newNode = new Node(content, actual, previous);
+            newNode = new Node(content, actual, previous);
 
             previous.next = newNode;
             actual.previous = newNode;

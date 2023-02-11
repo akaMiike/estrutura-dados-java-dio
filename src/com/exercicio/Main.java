@@ -1,5 +1,7 @@
 package com.exercicio;
 
+import com.exercicio.dataStructures.*;
+
 public class Main {
 
     public static void main(String[] args){
@@ -47,5 +49,14 @@ public class Main {
 
         doublyLinkedList.remove(1);
         System.out.println(doublyLinkedList);
+
+
+        CircularList<String> circularList = new CircularList<>();
+        circularList.add("Element 1",0);
+        circularList.add("Element 2",1);
+        circularList.add("Element 3",1);
+
+
+        System.out.println(circularList);
     }
 }

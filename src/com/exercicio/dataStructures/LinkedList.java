@@ -1,4 +1,4 @@
-package com.exercicio;
+package com.exercicio.dataStructures;
 
 public class LinkedList<T> {
 
@@ -36,7 +36,7 @@ public class LinkedList<T> {
         }
     }
 
-    public void add(T conteudo, int index){
+    public void add(T content, int index){
         if(index <= size() && index >= 0){
             Node actual = first;
 
@@ -45,17 +45,17 @@ public class LinkedList<T> {
             }
 
             if(index == 0)
-                first = new Node(conteudo);
+                first = new Node(content);
             else
-                actual.next = new Node(conteudo, actual.next);
+                actual.next = new Node(content, actual.next);
         }
         else{
             throw new IndexOutOfBoundsException("Índice está fora da lista.");
         }
     }
 
-    public void add(T conteudo){
-        add(conteudo, size());
+    public void add(T content){
+        add(content, size());
     }
 
     public T remove(int index){

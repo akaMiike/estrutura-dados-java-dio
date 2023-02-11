@@ -1,4 +1,4 @@
-package com.exercicio;
+package com.exercicio.dataStructures;
 
 public class Stack<T> {
     private Node topo;
