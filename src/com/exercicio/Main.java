@@ -37,6 +37,15 @@ public class Main {
         linkedList.add("New string 2",1);
         linkedList.add("New string 3",2);
 
+        linkedList.remove(2);
         System.out.println(linkedList);
+
+        DoublyLinkedList<String> doublyLinkedList = new DoublyLinkedList<>();
+        doublyLinkedList.add("String 1",0);
+        doublyLinkedList.add("String 2",1);
+        doublyLinkedList.add("String 3",2);
+
+        doublyLinkedList.remove(1);
+        System.out.println(doublyLinkedList);
     }
 }

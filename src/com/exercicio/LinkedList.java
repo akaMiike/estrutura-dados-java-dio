@@ -6,21 +6,21 @@ public class LinkedList<T> {
 
     public LinkedList(){}
 
-    public int length(){
-        int length = 0;
+    public int size(){
+        int size = 0;
 
         if(isEmpty())
-            return length;
+            return size;
 
         Node actual = first;
-        length++;
+        size++;
 
         while(actual.next != null){
             actual = actual.next;
-            length++;
+            size++;
         }
 
-        return length;
+        return size;
     }
 
     public T get(int index){
@@ -37,7 +37,7 @@ public class LinkedList<T> {
     }
 
     public void add(T conteudo, int index){
-        if(index <= length() && index >= 0){
+        if(index <= size() && index >= 0){
             Node actual = first;
 
             for(int i = 0; i < index-1; i++){
@@ -55,14 +55,17 @@ public class LinkedList<T> {
     }
 
     public void add(T conteudo){
-        add(conteudo, length());
+        add(conteudo, size());
     }
 
-    public void remove(int index){
+    public T remove(int index){
         if(isIndexOutOfBounds(index))
             throw new IndexOutOfBoundsException("Índice está fora da lista.");
 
+        Node removedNode;
+
         if(index == 0){
+            removedNode = first;
             first = first.next;
         }
         else{
@@ -71,8 +74,11 @@ public class LinkedList<T> {
                 actual = actual.next;
             }
 
+            removedNode = actual.next;
             actual.next = actual.next.next;
         }
+
+        return removedNode.content;
     }
 
     public Boolean isEmpty(){
@@ -98,7 +104,7 @@ public class LinkedList<T> {
     }
 
     private Boolean isIndexOutOfBounds(int index){
-        return index >= length() || index < 0;
+        return index >= size() || index < 0;
     }
 
     private class Node{
