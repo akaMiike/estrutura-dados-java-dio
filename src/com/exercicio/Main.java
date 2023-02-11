@@ -13,10 +13,11 @@ public class Main {
         System.out.println(pilha);
 
         topo = pilha.top();
-        System.out.println("Topo atual: " + topo);
+        System.out.println("Topo atual da pilha: " + topo);
 
         pilha.pop();
         String novoTopo = pilha.top();
+        System.out.println("Topo atual da pilha após pop: " + novoTopo);
 
         Queue<String> queue = new Queue<>();
         System.out.println(queue);
@@ -26,7 +27,16 @@ public class Main {
         queue.enqueue("Terceiro");
         System.out.println(queue);
         queue.dequeue();
+
+        System.out.println("Fila após dequeue");
         System.out.println(queue);
 
+
+        LinkedList<String> linkedList = new LinkedList<>();
+        linkedList.add("New string 1",0);
+        linkedList.add("New string 2",1);
+        linkedList.add("New string 3",2);
+
+        System.out.println(linkedList);
     }
 }

@@ -10,8 +10,8 @@ public class Queue<T>{
 
     private T first(){
         Node actual = last;
-        while(actual.nextRef != null){
-             actual = actual.nextRef;
+        while(actual.next != null){
+             actual = actual.next;
         }
 
         return actual.content;
@@ -31,7 +31,7 @@ public class Queue<T>{
         if(isEmpty())
             return null;
 
-        else if(last.nextRef == null){
+        else if(last.next == null){
             actual = last;
             last = null;
             return actual.content;
@@ -40,12 +40,12 @@ public class Queue<T>{
         else{
             actual = last;
 
-            while(actual.nextRef.nextRef != null){
-                 actual = actual.nextRef;
+            while(actual.next.next != null){
+                 actual = actual.next;
             }
 
-            Node dequeuedElement = actual.nextRef;
-            actual.nextRef = null;
+            Node dequeuedElement = actual.next;
+            actual.next = null;
 
             return dequeuedElement.content;
         }
@@ -57,14 +57,14 @@ public class Queue<T>{
 
     @Override
     public String toString(){
-        String queueString = "--------Fila--------\n";
+        String queueString = "--------Fila---------\n";
         Node noAtual = this.last;
 
         if(!isEmpty()){
             queueString += "{No = " + noAtual.content + "} -> ";
 
-            while(noAtual.nextRef != null){
-                noAtual = noAtual.nextRef;
+            while(noAtual.next != null){
+                noAtual = noAtual.next;
                 queueString += "{No = " + noAtual.content + "} -> ";
             }
         }
@@ -75,16 +75,16 @@ public class Queue<T>{
 
     private class Node{
         public T content;
-        public Node nextRef;
+        public Node next;
 
         public Node(T content){
             this.content = content;
-            this.nextRef = null;
+            this.next = null;
         }
 
         public Node(T content, Node proxNo){
             this.content = content;
-            this.nextRef = proxNo;
+            this.next = proxNo;
         }
     }
 }
