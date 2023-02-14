@@ -18,5 +18,7 @@ public class Main {
         DataStructureTests.showDoublyLinkedListTests();
         DataStructureTests.showCircularLinkedListTests();
         DataStructureTests.showBinaryTreeTests();*/
+
+        ListExercise.exercise1();
     }
 }
