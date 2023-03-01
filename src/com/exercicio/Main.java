@@ -1,6 +1,7 @@
 package com.exercicio;
 
 import com.exercicio.collections.ListExercise;
+import com.exercicio.collections.MapExercise;
 import com.exercicio.collections.SetExercise;
 import com.exercicio.dataStructures.*;
 
@@ -23,6 +24,7 @@ public class Main {
         //ListExercise.exercise1();
         //ListExercise.exercise2();
         //SetExercise.exercise1();
-        SetExercise.exercise2();
+        //SetExercise.exercise2();
+        MapExercise.exercise1();
     }
 }
