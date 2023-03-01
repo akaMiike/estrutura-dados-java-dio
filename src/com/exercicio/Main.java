@@ -3,15 +3,16 @@ package com.exercicio;
 import com.exercicio.collections.ListExercise;
 import com.exercicio.collections.MapExercise;
 import com.exercicio.collections.SetExercise;
+import com.exercicio.collections.StreamExercise;
 import com.exercicio.dataStructures.*;
 
 public class Main {
 
     public static void main(String[] args){
 	    /*
-	    * These methods below show tests of my implementations of data structures.
-        * I tried to implement by myself before see the answer,
-        * So the implementation may not be the best one.
+	    * Os métodos abaixo mostram as implementações de algumas estrutura de dados.
+        * Eu tentei implementar sozinho antes de olhar a resposta,
+        * então as implementações podem não ser as melhores.
 	    */
 
         /*DataStructureTests.showStackTest();
@@ -27,6 +28,7 @@ public class Main {
         //SetExercise.exercise2();
         //MapExercise.exercise1();
         //MapExercise.exercise2();
-        MapExercise.desafio1();
+        //MapExercise.desafio1();
+        StreamExercise.exercise1();
     }
 }
