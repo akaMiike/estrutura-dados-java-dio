@@ -1,6 +1,7 @@
 package com.exercicio;
 
 import com.exercicio.collections.ListExercise;
+import com.exercicio.collections.SetExercise;
 import com.exercicio.dataStructures.*;
 
 public class Main {
@@ -20,6 +21,8 @@ public class Main {
         DataStructureTests.showBinaryTreeTests();*/
 
         //ListExercise.exercise1();
-        ListExercise.exercise2();
+        //ListExercise.exercise2();
+        //SetExercise.exercise1();
+        SetExercise.exercise2();
     }
 }
