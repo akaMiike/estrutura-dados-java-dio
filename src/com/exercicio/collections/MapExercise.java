@@ -86,4 +86,20 @@ public class MapExercise {
 
     }
 
+    public static void desafio1(){
+        Map<Integer, Integer> lancamentoDados = new HashMap<>();
+
+        System.out.println("--- Lançamento aleatório de 100 dados ---");
+        for(int i = 0; i < 100; i++){
+           int lancamento = (int) ( Math.random() * 100) % 6 + 1;
+
+           if(lancamentoDados.containsKey(lancamento))
+               lancamentoDados.put(lancamento, lancamentoDados.get(lancamento) + 1);
+           else
+               lancamentoDados.put(lancamento, 1);
+        }
+
+        System.out.println("--- Numero de vezes de cada jogada do dado ---");
+        lancamentoDados.forEach((k,v) -> System.out.println("Valor: " + k + "; Num. jogadas: " + v));
+    }
 }

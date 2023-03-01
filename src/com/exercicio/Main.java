@@ -26,6 +26,7 @@ public class Main {
         //SetExercise.exercise1();
         //SetExercise.exercise2();
         //MapExercise.exercise1();
-        MapExercise.exercise2();
+        //MapExercise.exercise2();
+        MapExercise.desafio1();
     }
 }
