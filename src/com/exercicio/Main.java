@@ -22,6 +22,11 @@ public class Main {
         DataStructureTests.showCircularLinkedListTests();
         DataStructureTests.showBinaryTreeTests();*/
 
+        /*
+	    * Os métodos abaixo mostram o estudo de manipulações de Collections e Stream.
+        * Os exercícios foram providos pelo próprio curso de Collections em Java na DIO,
+	    */
+
         //ListExercise.exercise1();
         //ListExercise.exercise2();
         //SetExercise.exercise1();
@@ -29,6 +34,6 @@ public class Main {
         //MapExercise.exercise1();
         //MapExercise.exercise2();
         //MapExercise.desafio1();
-        StreamExercise.exercise1();
+        //StreamExercise.exercise1();
     }
 }
